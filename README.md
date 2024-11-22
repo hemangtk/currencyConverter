@@ -1,50 +1,63 @@
-# Welcome to your Expo app 👋
+# FXCalc - Currency Converter Mobile App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Overview
+FXCalc is a mobile application built with React Native that allows users to quickly and easily convert currencies using real-time exchange rates.
 
-## Get started
+## Features
+- Convert between 10 major currencies (USD, EUR, GBP, JPY, CAD, AUD, CHF, CNY, INR, BRL)
+- Real-time exchange rate fetching
+- Swap currencies with a single button
+- Clean, intuitive user interface
 
-1. Install dependencies
+## Screenshots
+[Add screenshots of your app here]
 
+## Prerequisites
+- Node.js
+- npm or yarn
+- React Native development environment
+- Expo CLI (recommended)
+
+## Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/fxcalc.git
+   cd fxcalc
+   ```
+
+2. Install dependencies:
    ```bash
    npm install
+   # or
+   yarn install
    ```
 
-2. Start the app
+3. Add your ExchangeRate-API key:
+   - Open `FXCalcApp.tsx`
+   - Replace `const API_KEY: string = '4282c9f71c035ca9e5d6e4fc';` with your API key
 
-   ```bash
-    npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
+## Running the App
 ```bash
-npm run reset-project
+npx expo start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Technologies Used
+- React Native
+- TypeScript
+- ExchangeRate-API
+- @react-native-picker/picker
 
-## Learn more
+## API Configuration
+- API Provider: ExchangeRate-API
+- Endpoint: https://v6.exchangerate-api.com/v6/[API_KEY]/pair/[FROM_CURRENCY]/[TO_CURRENCY]
 
-To learn more about developing your project with Expo, look at the following resources:
+## Limitations
+- Limited to 10 predefined currencies
+- Requires active internet connection
+- Free API plan may have usage restrictions
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Future Improvements
+- Add more currencies
+- Create historical rate tracking
+- Add currency flag icons
+- Add a graph for the recent rate changes
