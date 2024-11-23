@@ -6,7 +6,9 @@ import {
   TextInput, 
   TouchableOpacity, 
   SafeAreaView, 
-  StatusBar 
+  StatusBar,
+  ImageBackground,
+  Dimensions
 } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 
@@ -21,7 +23,7 @@ const CURRENCIES: string[] = [
 
 const FXCalcApp: React.FC = () => {
   const [fromCurrency, setFromCurrency] = useState<string>('USD');
-  const [toCurrency, setToCurrency] = useState<string>('EUR');
+  const [toCurrency, setToCurrency] = useState<string>('INR');
   const [amount, setAmount] = useState<string>('');
   const [convertedAmount, setConvertedAmount] = useState<string>('');
   const [exchangeRate, setExchangeRate] = useState<string>('');
@@ -65,6 +67,11 @@ const FXCalcApp: React.FC = () => {
   };
 
   return (
+    <ImageBackground 
+        source={require('../assets/images/background.png')}
+        style={styles.backgroundImage}
+      >
+        
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="dark-content" />
       <Text style={styles.title}>FXCalc</Text>
@@ -123,17 +130,24 @@ const FXCalcApp: React.FC = () => {
         </View>
       )}
     </SafeAreaView>
+    </ImageBackground>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f0f4f8',
+    // backgroundColor: '#f0f4f8',
     alignItems: 'center',
     justifyContent: 'center',
     padding: 20,
   },
+  backgroundImage: {
+    flex: 1,
+    width: '100%',
+    height: '100%',
+  },
+  
   title: {
     fontSize: 28,
     fontWeight: 'bold',
@@ -179,7 +193,7 @@ const styles = StyleSheet.create({
     width: '100%',
     marginTop: 20,
     shadowColor: '#3498db',
-    shadowOffset: { width: 0, height: 2 },
+    shadowOffset: { width: 0, height: 2 },  
     shadowOpacity: 0.3,
     shadowRadius: 4,
     elevation: 5,
